@@ -474,6 +474,147 @@
             }
         }
 
+
+        /* EXPERIENCE SECTION - IMPROVED UX */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .experience-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .experience-company {
+            display: inline-block;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+            color: var(--primary);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .experience-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-period {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .experience-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-description ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .experience-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 1024px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .experience-card {
+                padding: 1.5rem;
+            }
+
+            .experience-title {
+                font-size: 1.2rem;
+            }
+
+            .experience-meta {
+                gap: 1rem;
+            }
+
+            .experience-description {
+                font-size: 0.9rem;
+            }
+        }
     
         /* BANNER CONVERSAAO */
         .conversation-banner {
@@ -619,50 +760,64 @@
         <!-- EXPERIÊNCIA PROFISSIONAL -->
         <section>
             <h2>💼 Experiência Profissional</h2>
-            <div class="grid">
+            <div class="experience-grid">
                 <!-- Lyra - Mais recente -->
-                <div class="card">
-                    <div class="subtitle">Lyra</div>
-                    <h3>Analista de Marketing</h3>
-                    <div class="duration">jan 2026 – jun 2026 | São Paulo</div>
-                    <p>
-                        Desenvolveu estratégia de posicionamento de marca para mercado B2B de conectividade e tecnologia. Responsável pelo reposicionamento da marca, que resultou em +10% de engajamento e conversão no estande da empresa. Conduziu a presença estratégica da marca na EXPOSEC 2026, alcançando +30% em visibilidade e oportunidades comerciais. Realizou análises de desempenho pós-evento e produziu conteúdo estratégico com suporte de inteligência artificial.
-                    </p>
+                <div class="experience-card">
+                    <div class="experience-company">Lyra</div>
+                    <h3 class="experience-title">Analista de Marketing</h3>
+                    <div class="experience-meta">
+                        <div class="experience-period">📅 jan 2026 – jun 2026</div>
+                        <div class="experience-location">📍 São Paulo</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Desenvolvi estratégia de posicionamento de marca para mercado B2B de conectividade e tecnologia. Responsável pelo reposicionamento da marca, que resultou em <strong>+10% de engajamento e conversão</strong> no estande da empresa. Conduzi a presença estratégica da marca na EXPOSEC 2026, alcançando <strong>+30% em visibilidade</strong> e gerando oportunidades comerciais. Realizei análises de desempenho pós-evento e produzi conteúdo estratégico com suporte de inteligência artificial.</p>
+                    </div>
                 </div>
 
                 <!-- Virtual Jam -->
-                <div class="card">
-                    <div class="subtitle">Virtual Jam</div>
-                    <h3>Assistente de Marketing</h3>
-                    <div class="duration">jun 2024 – out 2024 | São Paulo</div>
-                    <p>
-                        Responsabilizou-se por campanhas de tráfego pago (Google Ads e Meta Ads) com foco em maximização de ROI. Acompanhava diariamente GA4, SEMRush e Looker Studio para análise de performance e tomada de decisão data-driven. Utilizou automação com inteligência artificial para pesquisa de competidores e otimização de processos operacionais. Executou estratégia de SEO e otimização contínua do funil de conteúdo digital.
-                    </p>
+                <div class="experience-card">
+                    <div class="experience-company">Virtual Jam</div>
+                    <h3 class="experience-title">Assistente de Marketing</h3>
+                    <div class="experience-meta">
+                        <div class="experience-period">📅 jun 2024 – out 2024</div>
+                        <div class="experience-location">📍 São Paulo</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Responsabilizei-me por campanhas de <strong>tráfego pago (Google Ads e Meta Ads)</strong> com foco em maximização de ROI. Acompanhei diariamente GA4, SEMRush e Looker Studio para análise de performance e tomada de decisão data-driven. Utilizei automação com inteligência artificial para pesquisa de competidores e otimização de processos operacionais. Executei estratégia de SEO e otimização contínua do funil de conteúdo digital.</p>
+                    </div>
                 </div>
 
                 <!-- Mandarin -->
-                <div class="card">
-                    <div class="subtitle">Agência Mandarin</div>
-                    <h3>Estagiária de Atendimento Publicitário (Cliente: Unilever)</h3>
-                    <div class="duration">fev 2025 – dez 2025 | São Paulo</div>
-                    <p>
-                        Executei atendimento publicitário em campanhas integradas e ativações de marca para a conta Unilever. Responsável pela elaboração de briefings estratégicos, alinhamento de KPIs e objetivos entre cliente, departamento criativo e produção. Participei da execução de eventos e projetos de ativação. Trabalhou com campanhas incluindo:
-                        <br>• "Me Lhama que eu vou" - Rexona x Libertadores
-                        <br>• "Rexona Não te Abandona" - BBB25
-                        <br>• "Quem tem o molho" - Hellmann's
-                        <br>• "Estranho é resistir a esse sabor" - Stranger Things
-                        <br>• All Body Deo Launch - Unilever
-                    </p>
+                <div class="experience-card">
+                    <div class="experience-company">Agência Mandarin</div>
+                    <h3 class="experience-title">Estagiária de Atendimento Publicitário</h3>
+                    <div class="experience-meta">
+                        <div class="experience-period">📅 fev 2025 – dez 2025</div>
+                        <div class="experience-location">📍 São Paulo</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Executei atendimento publicitário em campanhas integradas e ativações de marca para a conta <strong>Unilever</strong>. Responsável pela elaboração de briefings estratégicos, alinhamento de KPIs e objetivos entre cliente, departamento criativo e produção. Participei da execução de eventos e projetos de ativação com campanhas incluindo:</p>
+                        <ul>
+                            <li>"Me Lhama que eu vou" - Rexona x Libertadores</li>
+                            <li>"Rexona Não te Abandona" - BBB25</li>
+                            <li>"Quem tem o molho" - Hellmann's</li>
+                            <li>"Estranho é resistir a esse sabor" - Stranger Things</li>
+                            <li>All Body Deo Launch - Unilever</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Belong Be -->
-                <div class="card">
-                    <div class="subtitle">Belong.Be</div>
-                    <h3>Assistente de Comunicação / Estagiária / Menor Aprendiz</h3>
-                    <div class="duration">ago 2021 – nov 2022 | São Paulo</div>
-                    <p>
-                        Integrou-se ao time fundador aos 17 anos como menor aprendiz, evoluindo conforme a empresa crescia. Participou do lançamento da plataforma de e-commerce. Estruturou comunidade digital desde o início, alcançando 6,4% de engajamento orgânico através de estratégia de conteúdo e parcerias com influenciadores. Trabalhou em retenção e interações personalizadas com clientes, desenvolvendo mentalidade de ownership e entrepreneurship.
-                    </p>
+                <div class="experience-card">
+                    <div class="experience-company">Belong.Be</div>
+                    <h3 class="experience-title">Assistente de Comunicação</h3>
+                    <div class="experience-meta">
+                        <div class="experience-period">📅 ago 2021 – nov 2022</div>
+                        <div class="experience-location">📍 São Paulo</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Integrei-me ao time fundador aos 17 anos como menor aprendiz, evoluindo conforme a empresa crescia. Participei do <strong>lançamento da plataforma de e-commerce</strong>. Estruturei comunidade digital desde o início, alcançando <strong>6,4% de engajamento orgânico</strong> através de estratégia de conteúdo e parcerias com influenciadores. Trabalhei em retenção e interações personalizadas com clientes, desenvolvendo mentalidade de ownership e entrepreneurship.</p>
+                    </div>
                 </div>
             </div>
         </section>
